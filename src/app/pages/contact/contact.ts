@@ -9,7 +9,7 @@ import {
 import { Header } from '../../components/header';
 import { CommonModule } from '@angular/common';
 import { HttpStatusCode } from '@angular/common/http';
-import emailJs from '@emailJs/browser';
+import emailjs from '@emailjs/browser';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -75,7 +75,7 @@ export class Contact {
     }
     try {
       this.isSending.set(true);
-      const response = await emailJs.send(
+      const response = await emailjs.send(
         'service_qzft4dg',
         'template_ojn12rc',
         {
