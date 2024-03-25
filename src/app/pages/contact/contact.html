@@ -17,7 +17,7 @@
           <i class="bi bi-envelope flex-shrink-0"></i>
           <div>
             <h4>Email:</h4>
-            <p>info&commat;albemarle.com</p>
+            <p>info&commat;albemarlehf.org</p>
           </div>
         </div>
         <!-- End Info Item -->
@@ -34,10 +34,9 @@
 
       <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
         <form
-          action="forms/contact.php"
-          method="post"
-          role="form"
           class="php-email-form"
+          (ngSubmit)="onSubmit()"
+          [formGroup]="contactForm"
         >
           <div class="row">
             <div class="col-md-6 form-group">
@@ -47,8 +46,12 @@
                 class="form-control"
                 id="name"
                 placeholder="Your Name"
+                formControlName="name"
                 required
               />
+              @if(isInputValid('name', 'required')){
+              <p class="error">Name is required.</p>
+              }
             </div>
             <div class="col-md-6 form-group mt-3 mt-md-0">
               <input
@@ -56,9 +59,15 @@
                 class="form-control"
                 name="email"
                 id="email"
+                formControlName="email"
                 placeholder="Your Email"
                 required
               />
+              @if(isInputValid('email', 'required')){
+              <p class="error">Email is required.</p>
+              }@if (isInputValid('email','email')) {
+              <p class="error">Please enter a valid email address.</p>
+              }
             </div>
           </div>
           <div class="form-group mt-3">
@@ -66,10 +75,14 @@
               type="text"
               class="form-control"
               name="subject"
-              id="subject"
-              placeholder="Subject"
+              id="phone"
+              placeholder="Your Phone Number (Optional)"
+              formControlName="phone"
               required
             />
+            @if(isInputValid('phone', 'pattern')){
+            <p class="error">Invalid phone number.</p>
+            }
           </div>
           <div class="form-group mt-3">
             <textarea
@@ -78,11 +91,22 @@
               rows="5"
               placeholder="Message"
               required
+              formControlName="message"
             ></textarea>
+            @if(isInputValid('message', 'required')){
+            <p class="error">Message is required.</p>
+            }@if (isInputValid('message','minlength')) {
+            <p class="error">Message cannot be less than 10 characters.</p>
+            } @if (isInputValid('name', 'maxlength')) {
+            <p class="error">Message cannot be greater than 5000 characters.</p>
+
+            }
           </div>
 
           <div class="text-center">
-            <button type="submit">Send Message</button>
+            <button [disabled]="isSending()" type="submit">
+              {{ isSending() ? "Sending..." : "Send Message" }}
+            </button>
           </div>
         </form>
       </div>

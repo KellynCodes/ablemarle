@@ -13,6 +13,7 @@ export class Navbar {
   isNavOpen: boolean = false;
   isOpen(): void {
     const body = this.document.querySelector('body');
+    if (!body) return;
     if (body?.classList.contains('mobile-nav-active')) {
       body.classList.remove('mobile-nav-active');
     } else {

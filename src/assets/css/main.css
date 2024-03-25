@@ -264,6 +264,15 @@ section {
   margin: 0;
 }
 
+@media (max-width: 600px) {
+  .header .logo h1 {
+    font-size: 16px;
+    font-weight: 600;
+    text-wrap: nowrap;
+    min-width: 50vw;
+  }
+}
+
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
