@@ -21,7 +21,7 @@ import { Header } from '../components/header';
                 AlbeMarle Hospital Foundation is a non-profit organization
                 dedicated to supporting AlbeMarle Hospital in its mission to
                 provide accessible and high-quality healthcare services to all
-                members of our community. Founded in [year], our foundation has
+                members of our community. Founded in 2003, our foundation has
                 been instrumental in funding critical medical equipment,
                 supporting research endeavors, and implementing community
                 outreach programs aimed at promoting wellness and preventive

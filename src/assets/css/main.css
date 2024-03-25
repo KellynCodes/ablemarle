@@ -618,8 +618,11 @@ section {
 }
 
 .why-us .img-bg {
+  background: url("../../assets/img/patiene-caring.webp") center center
+    no-repeat;
   min-height: 500px;
   background-size: cover;
+  border-radius: 4px;
 }
 
 .why-us .slides {
