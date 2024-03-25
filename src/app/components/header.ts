@@ -8,14 +8,14 @@ import { Component, Input } from '@angular/core';
     <!-- ======= Breadcrumbs ======= -->
     <div
       class="breadcrumbs d-flex align-items-center"
-      style="background-image: url('assets/img/services-header.jpg');"
+      style="background-image: url('../../assets/img/patiene-caring.webp');"
     >
       <div
         class="container position-relative d-flex flex-column align-items-center"
       >
         <h2>{{ title }}</h2>
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a routerLink="/">Home</a></li>
           <li>{{ subTitle }}</li>
         </ol>
       </div>

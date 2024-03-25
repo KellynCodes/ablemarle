@@ -9,9 +9,6 @@
       <h1 class="d-flex align-items-center">AlbeMarle</h1>
     </a>
 
-    <i class="mobile-nav-show bi bi-list"></i>
-    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-
     <nav id="navbar" class="navbar">
       <ul>
         <li><a routerLink="/" routerLinkActive="active">Home</a></li>
@@ -24,6 +21,19 @@
       </ul>
     </nav>
     <!-- .navbar -->
+  </div>
+  <div class="">
+    <i
+      (click)="isOpen()"
+      *ngIf="!isNavOpen"
+      class="mobile-nav-show bi bi-list"
+    ></i>
+
+    <i
+      (click)="isOpen()"
+      *ngIf="isNavOpen"
+      class="mobile-nav-toggle mobile-nav-hide bi bi-x"
+    ></i>
   </div>
 </header>
 <!-- End Header -->
